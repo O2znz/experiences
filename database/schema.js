@@ -1,4 +1,5 @@
 var mongoose = require ('mongoose');
+var faker = require('faker');
 mongoose.connect('mongodb://localhost/experiences');
 var db = mongoose.connection;
 db.on('err', console.error.bind(console, "cannot connect to db"));
@@ -14,16 +15,20 @@ var Schema =  new mongoose.Schema({
     },
     images: [String, String, String]
 });
-
-var Experience = mongoose.model('Experiences', Schema);
-var dummy = {
-    lat: 37.441883,
-    long: -122.143021,
-    text: {
-        title: "Apple Picking",
-        desciption: "Enjoy a pleasant evening outdoors picking apples with your loved ones. Beautiful orchard in this hidden villa.",
-        price: 9},
-    images: ["https://i.ndtvimg.com/i/2017-10/apple-benefits_620x350_51507721694.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSj09dKvHIfLzsP4x8bTDE7A0JYM0BvVPxKQwlexaQzRlOfIS5B", "https://www.exploregeorgia.org/sites/default/files/legacy_images/bj-reece-apple-orchard-1502719963.jpg"]
-};
+    var x = 0;
+    var dummies = []
+while(x < 100){
+    x += 1;
+    var Experience = mongoose.model('Experiences', Schema);
+    dummies.push({
+        lat: faker.address.latitude(),
+        long: faker.address.longitude(),
+        text: {
+            title: faker.commerce.productName(),
+            desciption: faker.lorem.paragraph(),
+            price: faker.random.number()},
+        images: [faker.image.imageUrl(), faker.image.imageUrl(), faker.image.imageUrl()]
+    });
+}
 // console.log(Experience)
-Experience.insertMany(dummy);
+Experience.insertMany(dummies)
