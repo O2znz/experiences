@@ -22,9 +22,9 @@ var importExperience = function(exp) {
     return new Experience(exp).save();
 };
 
-// var findExp = function(id) {
-//     return Experience.find({id: id}).exe();
-// }
+var findExp = function(id) {
+    return Experience.find({id: id}).exe();
+}
 //     var x = 0;
 //     var dummies = []
 // while(x < 100){
