@@ -6,6 +6,7 @@ db.on('err', console.error.bind(console, "cannot connect to db"));
 db.once('open', () => {console.log('db connected')});
 
 var Schema =  new mongoose.Schema({
+    id: Number,
     lat: Number,
     long: Number,
     text: {
@@ -16,6 +17,14 @@ var Schema =  new mongoose.Schema({
     images: [String, String, String]
 });
 var Experience = mongoose.model('Experiences', Schema);
+
+var importExperience = function(exp) {
+    return new Experience(exp).save();
+};
+
+// var findExp = function(id) {
+//     return Experience.find({id: id}).exe();
+// }
 //     var x = 0;
 //     var dummies = []
 // while(x < 100){
@@ -36,5 +45,7 @@ var Experience = mongoose.model('Experiences', Schema);
 module.exports = {
     db: db,
     Schema: Schema,
-    Experience: Experience
+    Experience: Experience,
+    importExperience: importExperience,
+    // findExp: findExp
     }

@@ -8,6 +8,7 @@ const db = require('./index.js')
 while(x < 100){
     x += 1;
     dummies.push({
+        id: x,
         lat: faker.address.latitude(),
         long: faker.address.longitude(),
         text: {
@@ -19,5 +20,5 @@ while(x < 100){
 }
 // console.log(Experience)
 db.Experience.insertMany(dummies)
-mongoose.disconnect();
+// mongoose.disconnect();
 module.exports = db;
