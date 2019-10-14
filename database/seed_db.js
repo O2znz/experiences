@@ -1,25 +1,12 @@
 var mongoose = require ('mongoose');
 var faker = require('faker');
-mongoose.connect('mongodb://localhost/experiences');
-var db = mongoose.connection;
-db.on('err', console.error.bind(console, "cannot connect to db"));
-db.once('open', () => {console.log('db connected')});
+const db = require('./index.js')
 
-var Schema =  new mongoose.Schema({
-    lat: Number,
-    long: Number,
-    text: {
-        title: String,
-        desciption: String,
-        price: Number
-    },
-    images: [String, String, String]
-});
+// var Experience = mongoose.model('Experiences', db.Schema);
     var x = 0;
     var dummies = []
 while(x < 100){
     x += 1;
-    var Experience = mongoose.model('Experiences', Schema);
     dummies.push({
         lat: faker.address.latitude(),
         long: faker.address.longitude(),
@@ -31,4 +18,6 @@ while(x < 100){
     });
 }
 // console.log(Experience)
-Experience.insertMany(dummies)
+db.Experience.insertMany(dummies)
+mongoose.disconnect();
+module.exports = db;
