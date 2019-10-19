@@ -23,7 +23,7 @@ var importExperience = function(exp) {
 };
 
 var findExp = function(id) {
-    return Experience.find({id: id}).exe();
+    return Experience.find({id: id}).exec();
 }
 
 module.exports = {

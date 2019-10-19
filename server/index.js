@@ -14,16 +14,17 @@ app.get('/', (res, req) => {
     res.status(200).send(res)
 })
 
-app.get('/experiences/', (res, req) => {
+app.get('/experiences/', (req, res) => {
     console.log(req)
-    db.findExp(req)
-    .then(data);
-    var outBound = data[0];
-    console.log('data found!')
-    res.send(outBound)
+    db.findExp(1)
+    .then((data) => {
+        var outBound = data[0];
+        console.log(data[0])
+        res.send(outBound)
+    })
     .catch((err) => {
         console.log(err);
-        res.end();
+        res.end(err);
 })
 })
 

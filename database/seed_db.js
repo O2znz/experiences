@@ -14,7 +14,7 @@ while(x < 100){
         text: {
             title: faker.commerce.productName(),
             desciption: faker.lorem.paragraph(),
-            price: faker.random.number()},
+            price: Math.floor(Math.random()*420)},
         images: [faker.image.imageUrl(), faker.image.imageUrl(), faker.image.imageUrl()]
     });
 }
