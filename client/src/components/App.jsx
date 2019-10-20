@@ -28,17 +28,25 @@ var request = () => {
 }
 var testData = () => {
     $.get('/experiences/', null, (experiences) => {
+        this.setState({expList: experiences})
         console.log({experiences: experiences})
+        console.log(this.expList)
     })
 }
 
-const App = () => {
-
-    return(
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            expList: "something"
+        }
+    }
+    render() {
+        return (
         <Page>
             <Container>SOME TEXT
             </Container>
-
+            {/* <script>{console.log(this.expList)}</script> */}
             <button /*className={style.request}*/ onClick={request} >request</button>
             <button onClick={testData} >test data</button>
         <div className="app" style={appStyle}>
@@ -46,7 +54,33 @@ const App = () => {
         <Map />
         </div>
         </Page>
-    )
+        )
+    }
+    componentDidMount(){
+     $.get('/experiences/', null, (experiences) => {
+    console.log("Mounted", experiences, this.state.expList)
+    this.setState({expList: experiences})
+    console.log(this.state.expList)
+    }, 'json');
+    }
 }
+
+
+// const App = () => {
+
+//     return(
+//         <Page>
+//             <Container>SOME TEXT
+//             </Container>
+
+//             <button /*className={style.request}*/ onClick={request} >request</button>
+//             <button onClick={testData} >test data</button>
+//         <div className="app" style={appStyle}>
+//         <List />
+//         <Map />
+//         </div>
+//         </Page>
+//     )
+// }
 
 export default App;

@@ -16,10 +16,10 @@ app.get('/', (res, req) => {
 
 app.get('/experiences/', (req, res) => {
     console.log(req)
-    db.findExp(1)
+    db.returnAll()
     .then((data) => {
-        var outBound = data[0];
-        console.log(data[0])
+        var outBound = data;
+        console.log(data)
         res.send(outBound)
     })
     .catch((err) => {
@@ -27,5 +27,6 @@ app.get('/experiences/', (req, res) => {
         res.end(err);
 })
 })
+
 
 app.listen(PORT, () => console.log ("Experiences now on: ", PORT));

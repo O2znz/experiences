@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './styles/Experience.css';
 import Pictures from "./Pictures.jsx"
+import $ from "jquery";
 
 const Experience = () => {
 
@@ -32,9 +33,14 @@ const Experience = () => {
 
     }
 //******************************************** */
+
+// var input
 // $.get('/experiences/', null, (experiences) => {
-//     console.log({experiences: experiences})
+//     // console.log({experiences: experiences})
+//     var input = {experiences: experiences}
+//     console.log(input);
 // })
+// console.log(input);
 
     return(
         <div style={expStyling}>
