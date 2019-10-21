@@ -3,9 +3,9 @@ import style from './styles/Experience.css';
 import Pictures from "./Pictures.jsx"
 import $ from "jquery";
 
-const Experience = () => {
+const Experience = (props) => {
 
-
+// console.log(props.item.text.desciption)
 //**************** STYLING  ****************//
     var expStyling = {
         display: "flex",
@@ -34,27 +34,19 @@ const Experience = () => {
     }
 //******************************************** */
 
-// var input
-// $.get('/experiences/', null, (experiences) => {
-//     // console.log({experiences: experiences})
-//     var input = {experiences: experiences}
-//     console.log(input);
-// })
-// console.log(input);
-
     return(
         <div style={expStyling}>
-            <Pictures />
+            <Pictures pics={props.item.images}/>
             <div>
                 <br></br>
                 <div style={typeStyling}>ACTIVITY TYPE</div>
                 <br></br>
-                <div style={titleStyling}>TITLE FOR THE ACTIVITY</div>
+                <div style={titleStyling}>{props.item.text.title}</div>
                 <div style={faqStyling}>6 hours · Short description of what is included</div>
                 <br></br>
                 <br></br>
                 <div style={whatDoStyling}>What we'll do:</div>
-                <div style={descStyling}> Some wall of text that will no doubt give a reasonable description of the exerience.</div>
+                <div style={descStyling}>{props.item.text.desciption}</div>
             </div>
         </div>
     )

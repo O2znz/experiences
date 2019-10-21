@@ -11,15 +11,14 @@ var listStyling = {
 
 
 
-const List = () => {
+const List = (props) => {
+    var index = Object.keys(props.items);
+    console.log(props.items[index["2"]]);
     return(
         <div style={listStyling}>
-            <Experience />
-            <Experience />
-            <Experience />
-            <Experience />
-            <Experience />
-            <Experience />
+        {index.map((place) =>
+            <Experience item={props.items[place]} key={place} />
+          )}
         </div>
 
     )

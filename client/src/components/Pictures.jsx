@@ -15,7 +15,7 @@ var pic2Style = {
     float: "right",
 }
 
-const Pictures = () => {
+const Pictures = (props) => {
 
     return (
         <div style={picStyle}>

@@ -38,7 +38,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            expList: "something"
+            expList: {}
         }
     }
     render() {
@@ -50,7 +50,7 @@ class App extends React.Component {
             <button /*className={style.request}*/ onClick={request} >request</button>
             <button onClick={testData} >test data</button>
         <div className="app" style={appStyle}>
-        <List />
+        <List items={this.state.expList}/>
         <Map />
         </div>
         </Page>
@@ -58,9 +58,9 @@ class App extends React.Component {
     }
     componentDidMount(){
      $.get('/experiences/', null, (experiences) => {
-    console.log("Mounted", experiences, this.state.expList)
+    // console.log("Mounted", experiences, this.state.expList)
     this.setState({expList: experiences})
-    console.log(this.state.expList)
+    // console.log(this.state.expList)
     }, 'json');
     }
 }
