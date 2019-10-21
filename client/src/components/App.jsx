@@ -6,17 +6,10 @@ import List from './List.jsx';
 import Map from './Map.jsx';
 
 /* BEGINNING OF STYLING */
-var appStyle = {
-    width: "inherit",
-    height: "inherit",
-    display: "flex"
-}
-var Container = styled.div`
-    color: "red";
-    height: "20px";
-    width: "20px";
-    font-size: 20px;
-    background-color: "red";
+var AppStyle = styled.div`
+    width: inherit;
+    height: inherit;
+    display: flex;
 `
 var Page = styled.div`
 `
@@ -44,14 +37,12 @@ class App extends React.Component {
     render() {
         return (
         <Page>
-            <Container>SOME TEXT
-            </Container>
             <button /*className={style.request}*/ onClick={request} >request</button>
             <button onClick={testData} >test data</button>
-        <div className="app" style={appStyle}>
+        <AppStyle>
         <List items={this.state.expList}/>
         <Map />
-        </div>
+        </AppStyle>
         </Page>
         )
     }
