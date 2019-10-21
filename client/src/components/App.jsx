@@ -46,7 +46,6 @@ class App extends React.Component {
         <Page>
             <Container>SOME TEXT
             </Container>
-            {/* <script>{console.log(this.expList)}</script> */}
             <button /*className={style.request}*/ onClick={request} >request</button>
             <button onClick={testData} >test data</button>
         <div className="app" style={appStyle}>

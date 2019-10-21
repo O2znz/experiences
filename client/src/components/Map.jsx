@@ -6,8 +6,8 @@ import $ from "jquery";
 var map = "https://img.utdstc.com/screen/13/google-maps-001.png:m";
 
 var mapStyle = {
-    width: "130%",
-    position: "sticky",
+    width: "40%",
+    position: "fixed",
 }
 
 const Map = () => {
