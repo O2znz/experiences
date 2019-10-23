@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import style from './styles/List.css';
+// import styled from 'styled-components';
+// import style from './styles/List.css';
+const styled = window.styled;
 import Experience from './Experience.jsx';
 
 var ListStyling = styled.div`
