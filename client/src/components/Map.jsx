@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+const styled = window.styled;
+// import styled from 'styled-components';
 // import style from "./styles/Map.css"
 // import $ from "jquery";
 

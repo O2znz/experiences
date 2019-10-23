@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import style from './styles/Experience.css';
+// import styled from 'styled-components';
+// import style from './styles/Experience.css';
+const styled = window.styled;
 import Pictures from "./Pictures.jsx"
 import $ from "jquery";
 

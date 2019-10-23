@@ -1,7 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 // import style from './styles/App.css';
+const styled = window.styled;
 import List from './List.jsx';
 import Map from './Map.jsx';
 
