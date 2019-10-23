@@ -1,23 +1,23 @@
-import React from "react";
-import style from "./styles/Map.css"
-import $ from "jquery";
+import React from 'react';
+import styled from 'styled-components';
+// import style from "./styles/Map.css"
+// import $ from "jquery";
 
 
-var map = "https://img.utdstc.com/screen/13/google-maps-001.png:m";
+const map = 'https://img.utdstc.com/screen/13/google-maps-001.png:m';
 
-var mapStyle = {
-    width: "40%",
-    position: "fixed",
-}
+const Mapstyle = styled.img`
+    width: 40%;
+    position: fixed;
+`;
 
 const Map = () => {
 
-return (
+  return (
     <div>
-     <img src={map} style={mapStyle}>
-     </img>
+      <Mapstyle src={map} />
     </div>
-)
-}
+  );
+};
 
 export default Map;

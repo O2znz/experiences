@@ -1,54 +1,57 @@
 import React from 'react';
+import styled from 'styled-components';
 import style from './styles/Experience.css';
 import Pictures from "./Pictures.jsx"
 import $ from "jquery";
+
+
+var ExpStyling = styled.div`
+    display: flex;
+    // margin: 10px;
+    border: 1px solid black;
+    width: 100%;
+    height: 300px;
+`
+var TypeStyling = styled.div`
+    font-size: 12px;
+    font-weight: bold;
+    color: grey;
+`
+var TitleStyling = styled.div`
+    fontSize: 25px;
+`
+var FaqStyling = styled.div`
+    color: grey;
+`
+var WhatDoStyling = styled.div`
+    font-weight: bold;
+`
+var DescStyling = styled.div`
+    width: 600px;
+    height: 100px;
+`
 
 const Experience = (props) => {
 
 // console.log(props.item.text.desciption)
 //**************** STYLING  ****************//
-    var expStyling = {
-        display: "flex",
-        // margin: "10px",
-        border: "1px solid black",
-        width: "100%",
-        height: "300px"
-    }
-    var typeStyling = {
-        "fontSize": "12px",
-        "fontWeight": "bold",
-        "color": "grey"
-
-    }
-    var titleStyling = {
-        "fontSize": "25px"
-    }
-    var faqStyling = {
-        "color": "grey"
-    }
-    var whatDoStyling = {
-        fontWeight: "bold"
-    }
-    var descStyling = {
-
-    }
 //******************************************** */
 
     return(
-        <div style={expStyling}>
+        <ExpStyling>
             <Pictures pics={props.item.images}/>
             <div>
                 <br></br>
-                <div style={typeStyling}>ACTIVITY TYPE</div>
+                <TypeStyling>ACTIVITY TYPE</TypeStyling>
                 <br></br>
-                <div style={titleStyling}>{props.item.text.title}</div>
-                <div style={faqStyling}>6 hours · Short description of what is included</div>
+                <TitleStyling>{props.item.text.title}</TitleStyling>
+                <FaqStyling>6 hours · Short description of what is included</FaqStyling>
                 <br></br>
                 <br></br>
-                <div style={whatDoStyling}>What we'll do:</div>
-                <div style={descStyling}>{props.item.text.desciption}</div>
+                <WhatDoStyling>What we'll do:</WhatDoStyling>
+                <DescStyling>{props.item.text.desciption}</DescStyling>
             </div>
-        </div>
+        </ExpStyling>
     )
 }
 
