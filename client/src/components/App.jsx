@@ -48,7 +48,7 @@ class App extends React.Component {
         )
     }
     componentDidMount(){
-     $.get('http://localhost:3005/experiences/', null, (experiences) => {
+     $.get('/experiences/', null, (experiences) => {
     // console.log("Mounted", experiences, this.state.expList)
     this.setState({expList: experiences})
     // console.log(this.state.expList)
